@@ -76,7 +76,7 @@ const KPISelector = () => {
   useEffect(() => {
     const fetchKPIs = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/getKPIs');
+        const response = await axios.get('/api/getKPIs');
         setKpis(response.data);
         setLoading(false);
       } catch (err) {
@@ -106,7 +106,7 @@ const KPISelector = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3001/api/recommend', { kpis: selectedKpis });
+      const response = await axios.post('/api/recommend', { kpis: selectedKpis });
       setRecommendedTools(response.data);
       setError(null);
     } catch (err) {
