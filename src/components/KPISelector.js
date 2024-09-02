@@ -168,7 +168,7 @@ const KPISelector = () => {
           </KPIItem>
         ))}
       </KPIList>
-      <Button onClick={handleSubmit}>Get Eco-Friendly Tools</Button>
+      <Button onClick={handleSubmit}>Get Recommended Tools</Button>
       <SubTitle>Recommended tools to use:</SubTitle>
       {recommendedTools.length > 0 ? (
         <ToolList>
