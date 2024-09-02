@@ -3,16 +3,25 @@ import KPISelector from './components/KPISelector';
 import styled from 'styled-components';
 
 const AppContainer = styled.div`
-  background-color: #F0F7DA; // Light, natural green background
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20"><path fill="%23C5E1A5" d="M0 0h100v100H0z"/><path fill="%23AED581" d="M100 0H0l100 100V0z"/></svg>');
+  background-color: #E8F5E9; // Light green hue
   min-height: 100vh;
   padding: 20px;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+`;
+
+const CornerImage = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px; // Adjust size as needed
+  height: auto;
 `;
 
 function App() {
   return (
     <AppContainer>
+      <CornerImage src="https://pedeu.net/wp-content/uploads/2021/03/pedeunet-logo.svg" alt="Corner Logo" />
       <KPISelector />
     </AppContainer>
   );
