@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
       console.log('KPI names:', kpiNames);
       const query = `
         MATCH (tool:Tools)
-        WHERE ALL(kpiName IN $kpiNames WHERE (:KPI {Node: kpiName})-[:CALCULATED_BY]->(tool))
+        WHERE ALL(kpiName IN $kpiNames WHERE (:KPI {Node: kpiName})-[:be_calculated_by]->(tool))
         RETURN DISTINCT tool
       `;
       console.log('Executing Neo4j query:', query);

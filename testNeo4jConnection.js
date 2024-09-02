@@ -24,7 +24,7 @@ async function testNeo4jConnection() {
 
         // Add this after the existing queries
         const relationshipQuery = `
-          MATCH (k:KPI)-[r:CALCULATED_BY]->(t:\`Tools able to compute the KPI\`)
+          MATCH (k:KPI)-[r:be_calculated_by]->(t:\`Tools able to compute the KPI\`)
           RETURN k.Node AS KPI, t.Node AS Tool
           LIMIT 10
         `;
