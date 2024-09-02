@@ -168,8 +168,8 @@ const KPISelector = () => {
           </KPIItem>
         ))}
       </KPIList>
-      <Button onClick={handleSubmit}>Get Recommended Tools</Button>
-      <SubTitle>Recommended Sustainable Tools:</SubTitle>
+      <Button onClick={handleSubmit}>Get Eco-Friendly Tools</Button>
+      <SubTitle>Recommended tools to use:</SubTitle>
       {recommendedTools.length > 0 ? (
         <ToolList>
           {recommendedTools.map((tool) => (
@@ -180,7 +180,7 @@ const KPISelector = () => {
           ))}
         </ToolList>
       ) : (
-        <NoToolsMessage>No eco-friendly tools found for the selected KPIs.</NoToolsMessage>
+        <NoToolsMessage>No tools found for the selected KPIs.</NoToolsMessage>
       )}
     </Container>
   );
