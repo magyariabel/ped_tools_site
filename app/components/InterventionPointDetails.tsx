@@ -8,16 +8,22 @@ import GraphVisualization from './GraphVisualization'
 export default function InterventionPointDetails() {
     const params = useParams()
     const [interventionPoint, setInterventionPoint] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         if (params.id) {
-            getInterventionPointDetails(params.id).then(setInterventionPoint)
+            setLoading(true)
+            getInterventionPointDetails(params.id)
+                .then(setInterventionPoint)
+                .catch(setError)
+                .finally(() => setLoading(false))
         }
     }, [params.id])
 
-    if (!interventionPoint) {
-        return <div>Select an intervention point to view details</div>
-    }
+    if (loading) return <div>Loading intervention point details...</div>
+    if (error) return <div>Error loading intervention point details: {error.message}</div>
+    if (!interventionPoint) return <div>No intervention point found</div>
 
     return (
         <div>

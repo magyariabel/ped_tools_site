@@ -1,28 +1,11 @@
-import neo4j, { Driver } from 'neo4j-driver'
+import neo4j from 'neo4j-driver'
 
-let driver: Driver
+const uri = process.env.NEO4J_URI
+const user = process.env.NEO4J_USERNAME
+const password = process.env.NEO4J_PASSWORD
 
-export function initDriver() {
-    driver = neo4j.driver(
-        process.env.NEO4J_URI || 'bolt://localhost:7687',
-        neo4j.auth.basic(
-            process.env.NEO4J_USERNAME || 'neo4j',
-            process.env.NEO4J_PASSWORD || 'password'
-        )
-    )
-
-    return driver
-}
+const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
 
 export function getDriver() {
-    if (!driver) {
-        throw new Error('Driver not initialized. Call initDriver first.')
-    }
     return driver
-}
-
-export async function closeDriver() {
-    if (driver) {
-        await driver.close()
-    }
 }

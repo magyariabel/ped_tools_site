@@ -38,6 +38,10 @@ export async function getInterventionPointDetails(id: string) {
             { id }
         )
 
+        if (result.records.length === 0) {
+            throw new Error('Intervention point not found')
+        }
+
         const record = result.records[0]
         return {
             id: record.get('id'),
@@ -56,6 +60,9 @@ export async function getInterventionPointDetails(id: string) {
                 links: record.get('relationships'),
             },
         }
+    } catch (error) {
+        console.error('Error fetching intervention point details:', error)
+        throw error
     } finally {
         await session.close()
     }
