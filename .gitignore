@@ -2,3 +2,4 @@
 .env
 build/
 .vercel
+node_modules/
