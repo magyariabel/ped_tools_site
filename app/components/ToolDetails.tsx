@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import { getToolDetails } from '../lib/tools'
-import GraphVisualization from './GraphVisualization'
+import dynamic from 'next/dynamic'
+
+const GraphVisualization = dynamic(() => import('./GraphVisualization'), { ssr: false })
 
 export default function ToolDetails() {
     const params = useParams()
@@ -11,7 +13,8 @@ export default function ToolDetails() {
 
     useEffect(() => {
         if (params.id) {
-            getToolDetails(params.id).then(setTool)
+            const id = Array.isArray(params.id) ? params.id[0] : params.id;
+            getToolDetails(id).then(setTool);
         }
     }, [params.id])
 
@@ -36,7 +39,7 @@ export default function ToolDetails() {
                 ))}
             </ul>
             <h3 className="text-lg font-semibold mb-2">Relationships</h3>
-            <GraphVisualization data={tool.relationships} />
+            {typeof window !== 'undefined' && <GraphVisualization data={tool.relationships} />}
         </div>
     )
 }

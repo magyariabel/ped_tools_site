@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import { getInterventionPointDetails } from '../lib/interventionPoints'
-import GraphVisualization from './GraphVisualization'
+import dynamic from 'next/dynamic'
+
+const GraphVisualization = dynamic(() => import('./GraphVisualization'), { ssr: false })
 
 export default function InterventionPointDetails() {
     const params = useParams()
@@ -14,7 +16,7 @@ export default function InterventionPointDetails() {
     useEffect(() => {
         if (params.id) {
             setLoading(true)
-            getInterventionPointDetails(params.id)
+            getInterventionPointDetails(Array.isArray(params.id) ? params.id[0] : params.id)
                 .then(setInterventionPoint)
                 .catch(setError)
                 .finally(() => setLoading(false))

@@ -5,6 +5,10 @@ const nextConfig = {
         config.resolve.fallback = { fs: false, net: false, tls: false };
         return config;
     },
+    // Add this section for path aliases
+    experimental: {
+        appDir: true,
+    },
 }
 
 module.exports = nextConfig

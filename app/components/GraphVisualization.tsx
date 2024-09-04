@@ -1,15 +1,18 @@
 'use client'
 
 import { useRef, useEffect } from 'react'
-import ForceGraph2D from 'react-force-graph-2d'
+import dynamic from 'next/dynamic'
+
+const ForceGraph2D = dynamic(() => import('react-force-graph-2d'), { ssr: false })
 
 export default function GraphVisualization({ data }) {
-  const graphRef = useRef()
+  const graphRef = useRef(null);
 
   useEffect(() => {
     if (graphRef.current) {
-      graphRef.current.d3Force('charge').strength(-100)
-      graphRef.current.d3Force('link').distance(50)
+      const graph = graphRef.current;
+      graph.d3Force('charge')?.strength(-100);
+      graph.d3Force('link')?.distance(50);
     }
   }, [])
 

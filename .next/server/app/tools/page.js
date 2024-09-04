@@ -399,20 +399,30 @@ async function getToolDetails(id) {
     }
 }
 
-// EXTERNAL MODULE: ./app/components/GraphVisualization.tsx
-var GraphVisualization = __webpack_require__(62996);
+// EXTERNAL MODULE: ./node_modules/next/dist/shared/lib/app-dynamic.js
+var app_dynamic = __webpack_require__(47335);
+var app_dynamic_default = /*#__PURE__*/__webpack_require__.n(app_dynamic);
 ;// CONCATENATED MODULE: ./app/components/ToolDetails.tsx
 /* __next_internal_client_entry_do_not_use__ default auto */ 
 
 
 
 
+const GraphVisualization = app_dynamic_default()(null, {
+    loadableGenerated: {
+        modules: [
+            "C:\\Users\\abel\\ped_tools_new\\ped_tools\\app\\components\\ToolDetails.tsx -> " + "./GraphVisualization"
+        ]
+    },
+    ssr: false
+});
 function ToolDetails() {
     const params = (0,navigation.useParams)();
     const [tool, setTool] = (0,react_.useState)(null);
     (0,react_.useEffect)(()=>{
         if (params.id) {
-            getToolDetails(params.id).then(setTool);
+            const id = Array.isArray(params.id) ? params.id[0] : params.id;
+            getToolDetails(id).then(setTool);
         }
     }, [
         params.id
@@ -456,9 +466,7 @@ function ToolDetails() {
                 className: "text-lg font-semibold mb-2",
                 children: "Relationships"
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(GraphVisualization/* default */.Z, {
-                data: tool.relationships
-            })
+             false && /*#__PURE__*/ 0
         ]
     });
 }
@@ -628,7 +636,7 @@ function ToolsPage() {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [160,611,249,71], () => (__webpack_exec__(48990)));
+var __webpack_exports__ = __webpack_require__.X(0, [69,378,273,193], () => (__webpack_exec__(48990)));
 module.exports = __webpack_exports__;
 
 })();

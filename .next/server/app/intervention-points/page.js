@@ -310,11 +310,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 28916:
+/***/ 34205:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 29792));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 50954, 23))
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 50954, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 29792))
 
 /***/ }),
 
@@ -412,14 +412,23 @@ async function getInterventionPointDetails(id) {
     }
 }
 
-// EXTERNAL MODULE: ./app/components/GraphVisualization.tsx
-var GraphVisualization = __webpack_require__(62996);
+// EXTERNAL MODULE: ./node_modules/next/dist/shared/lib/app-dynamic.js
+var app_dynamic = __webpack_require__(47335);
+var app_dynamic_default = /*#__PURE__*/__webpack_require__.n(app_dynamic);
 ;// CONCATENATED MODULE: ./app/components/InterventionPointDetails.tsx
 /* __next_internal_client_entry_do_not_use__ default auto */ 
 
 
 
 
+const GraphVisualization = app_dynamic_default()(null, {
+    loadableGenerated: {
+        modules: [
+            "C:\\Users\\abel\\ped_tools_new\\ped_tools\\app\\components\\InterventionPointDetails.tsx -> " + "./GraphVisualization"
+        ]
+    },
+    ssr: false
+});
 function InterventionPointDetails() {
     const params = (0,navigation.useParams)();
     const [interventionPoint, setInterventionPoint] = (0,react_.useState)(null);
@@ -428,7 +437,7 @@ function InterventionPointDetails() {
     (0,react_.useEffect)(()=>{
         if (params.id) {
             setLoading(true);
-            getInterventionPointDetails(params.id).then(setInterventionPoint).catch(setError).finally(()=>setLoading(false));
+            getInterventionPointDetails(Array.isArray(params.id) ? params.id[0] : params.id).then(setInterventionPoint).catch(setError).finally(()=>setLoading(false));
         }
     }, [
         params.id
@@ -489,7 +498,7 @@ function InterventionPointDetails() {
                 className: "text-lg font-semibold mb-2",
                 children: "Relationships"
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(GraphVisualization/* default */.Z, {
+            /*#__PURE__*/ jsx_runtime_.jsx(GraphVisualization, {
                 data: interventionPoint.relationships
             })
         ]
@@ -674,7 +683,7 @@ function InterventionPointsPage() {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [160,611,249,71], () => (__webpack_exec__(86237)));
+var __webpack_exports__ = __webpack_require__.X(0, [69,378,273,193], () => (__webpack_exec__(86237)));
 module.exports = __webpack_exports__;
 
 })();

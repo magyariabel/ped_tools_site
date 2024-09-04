@@ -310,11 +310,11 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 4736:
+/***/ 55260:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 94057));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 50954, 23))
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 50954, 23));
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 94057))
 
 /***/ }),
 
@@ -401,20 +401,30 @@ async function getKPIDetails(id) {
     }
 }
 
-// EXTERNAL MODULE: ./app/components/GraphVisualization.tsx
-var GraphVisualization = __webpack_require__(62996);
+// EXTERNAL MODULE: ./node_modules/next/dist/shared/lib/app-dynamic.js
+var app_dynamic = __webpack_require__(47335);
+var app_dynamic_default = /*#__PURE__*/__webpack_require__.n(app_dynamic);
 ;// CONCATENATED MODULE: ./app/components/KPIDetails.tsx
 /* __next_internal_client_entry_do_not_use__ default auto */ 
 
 
 
 
+const GraphVisualization = app_dynamic_default()(null, {
+    loadableGenerated: {
+        modules: [
+            "C:\\Users\\abel\\ped_tools_new\\ped_tools\\app\\components\\KPIDetails.tsx -> " + "./GraphVisualization"
+        ]
+    },
+    ssr: false
+});
 function KPIDetails() {
     const params = (0,navigation.useParams)();
     const [kpi, setKPI] = (0,react_.useState)(null);
     (0,react_.useEffect)(()=>{
         if (params.id) {
-            getKPIDetails(params.id).then(setKPI);
+            const id = Array.isArray(params.id) ? params.id[0] : params.id;
+            getKPIDetails(id).then(setKPI);
         }
     }, [
         params.id
@@ -466,7 +476,7 @@ function KPIDetails() {
                 className: "text-lg font-semibold mb-2",
                 children: "Relationships"
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx(GraphVisualization/* default */.Z, {
+            /*#__PURE__*/ jsx_runtime_.jsx(GraphVisualization, {
                 data: kpi.relationships
             })
         ]
@@ -640,7 +650,7 @@ function KPIsPage() {
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [160,611,249,71], () => (__webpack_exec__(15426)));
+var __webpack_exports__ = __webpack_require__.X(0, [69,378,273,193], () => (__webpack_exec__(15426)));
 module.exports = __webpack_exports__;
 
 })();

@@ -210,7 +210,7 @@ __webpack_require__.r(__webpack_exports__);
         '',
         {
         children: ['__PAGE__', {}, {
-          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 37103)), "C:\\Users\\abel\\ped_tools_new\\ped_tools\\app\\page.tsx"],
+          page: [() => Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 11500)), "C:\\Users\\abel\\ped_tools_new\\ped_tools\\app\\page.tsx"],
           
         }]
       },
@@ -245,17 +245,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 31004:
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 52987, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 56926, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 50831, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 44282, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 31232, 23))
-
-/***/ }),
-
 /***/ 52038:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -263,7 +252,7 @@ Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_
 
 /***/ }),
 
-/***/ 37103:
+/***/ 11500:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -282,44 +271,54 @@ var next_link = __webpack_require__(25124);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 // EXTERNAL MODULE: ./node_modules/next/dist/compiled/react/react.shared-subset.js
 var react_shared_subset = __webpack_require__(62947);
+// EXTERNAL MODULE: ./node_modules/clsx/dist/clsx.mjs
+var clsx = __webpack_require__(95182);
+// EXTERNAL MODULE: ./node_modules/tailwind-merge/dist/lib/tw-merge.mjs + 10 modules
+var tw_merge = __webpack_require__(12794);
+;// CONCATENATED MODULE: ./app/lib/utils.ts
+
+
+function cn(...inputs) {
+    return (0,tw_merge/* twMerge */.m)((0,clsx/* clsx */.W)(inputs));
+}
+
 ;// CONCATENATED MODULE: ./app/components/ui/card.tsx
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 
 const Card = /*#__PURE__*/ react_shared_subset.forwardRef(({ className, ...props }, ref)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
         ref: ref,
-        className: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("rounded-lg border bg-card text-card-foreground shadow-sm", className),
+        className: cn("rounded-lg border bg-card text-card-foreground shadow-sm", className),
         ...props
     }));
 Card.displayName = "Card";
 const CardHeader = /*#__PURE__*/ react_shared_subset.forwardRef(({ className, ...props }, ref)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
         ref: ref,
-        className: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("flex flex-col space-y-1.5 p-6", className),
+        className: cn("flex flex-col space-y-1.5 p-6", className),
         ...props
     }));
 CardHeader.displayName = "CardHeader";
 const CardTitle = /*#__PURE__*/ react_shared_subset.forwardRef(({ className, ...props }, ref)=>/*#__PURE__*/ jsx_runtime_.jsx("h3", {
         ref: ref,
-        className: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("text-2xl font-semibold leading-none tracking-tight", className),
+        className: cn("text-2xl font-semibold leading-none tracking-tight", className),
         ...props
     }));
 CardTitle.displayName = "CardTitle";
 const CardDescription = /*#__PURE__*/ react_shared_subset.forwardRef(({ className, ...props }, ref)=>/*#__PURE__*/ jsx_runtime_.jsx("p", {
         ref: ref,
-        className: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("text-sm text-muted-foreground", className),
+        className: cn("text-sm text-muted-foreground", className),
         ...props
     }));
 CardDescription.displayName = "CardDescription";
 const CardContent = /*#__PURE__*/ react_shared_subset.forwardRef(({ className, ...props }, ref)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
         ref: ref,
-        className: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("p-6 pt-0", className),
+        className: cn("p-6 pt-0", className),
         ...props
     }));
 CardContent.displayName = "CardContent";
 const CardFooter = /*#__PURE__*/ react_shared_subset.forwardRef(({ className, ...props }, ref)=>/*#__PURE__*/ jsx_runtime_.jsx("div", {
         ref: ref,
-        className: Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/lib/utils'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())("flex items-center p-6 pt-0", className),
+        className: cn("flex items-center p-6 pt-0", className),
         ...props
     }));
 CardFooter.displayName = "CardFooter";
@@ -406,7 +405,7 @@ function Home() {
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [160,249], () => (__webpack_exec__(12703)));
+var __webpack_exports__ = __webpack_require__.X(0, [69,882,273], () => (__webpack_exec__(12703)));
 module.exports = __webpack_exports__;
 
 })();

@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import { getKPIDetails } from '../lib/kpis'
-import GraphVisualization from './GraphVisualization'
+import dynamic from 'next/dynamic'
+const GraphVisualization = dynamic(() => import('./GraphVisualization'), { ssr: false })
 
 export default function KPIDetails() {
     const params = useParams()
@@ -11,7 +12,8 @@ export default function KPIDetails() {
 
     useEffect(() => {
         if (params.id) {
-            getKPIDetails(params.id).then(setKPI)
+            const id = Array.isArray(params.id) ? params.id[0] : params.id;
+            getKPIDetails(id).then(setKPI);
         }
     }, [params.id])
 

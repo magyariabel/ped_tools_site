@@ -3,7 +3,9 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import { getStakeholderDetails } from '../lib/stakeholders'
-import GraphVisualization from './GraphVisualization'
+import dynamic from 'next/dynamic'
+
+const GraphVisualization = dynamic(() => import('./GraphVisualization'), { ssr: false })
 
 export default function StakeholderDetails() {
   const params = useParams()
@@ -11,7 +13,8 @@ export default function StakeholderDetails() {
 
   useEffect(() => {
     if (params.id) {
-      getStakeholderDetails(params.id).then(setStakeholder)
+      const id = Array.isArray(params.id) ? params.id[0] : params.id;
+      getStakeholderDetails(id).then(setStakeholder);
     }
   }, [params.id])
 
