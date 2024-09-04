@@ -14,6 +14,14 @@ const nextConfig = {
         NEO4J_USERNAME: process.env.NEO4J_USERNAME,
         NEO4J_PASSWORD: process.env.NEO4J_PASSWORD,
     },
+    async rewrites() {
+        return [
+            {
+                source: '/api/:path*',
+                destination: 'http://localhost:3001/api/:path*',
+            },
+        ];
+    },
 }
 
 module.exports = nextConfig

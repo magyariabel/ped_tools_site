@@ -16,7 +16,8 @@ export default function InterventionPointDetails() {
     useEffect(() => {
         if (params.id) {
             setLoading(true)
-            getInterventionPointDetails(Array.isArray(params.id) ? params.id[0] : params.id)
+            fetch(`/api/interventionPoint/${Array.isArray(params.id) ? params.id[0] : params.id}`)
+                .then((res) => res.json())
                 .then(setInterventionPoint)
                 .catch(setError)
                 .finally(() => setLoading(false))

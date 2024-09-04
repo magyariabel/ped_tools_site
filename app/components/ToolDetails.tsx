@@ -14,7 +14,11 @@ export default function ToolDetails() {
     useEffect(() => {
         if (params.id) {
             const id = Array.isArray(params.id) ? params.id[0] : params.id;
-            getToolDetails(id).then(setTool);
+            fetch(`/api/tool/${id}`)
+                .then((res) => res.json())
+                .then(setTool)
+                .catch(setError)
+                .finally(() => setLoading(false))
         }
     }, [params.id])
 

@@ -14,7 +14,11 @@ export default function StakeholderDetails() {
   useEffect(() => {
     if (params.id) {
       const id = Array.isArray(params.id) ? params.id[0] : params.id;
-      getStakeholderDetails(id).then(setStakeholder);
+      fetch(`/api/stakeholder/${id}`)
+        .then((res) => res.json())
+        .then(setStakeholder)
+        .catch(setError)
+        .finally(() => setLoading(false));
     }
   }, [params.id])
 
